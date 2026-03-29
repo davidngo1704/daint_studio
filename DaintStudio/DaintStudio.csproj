@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net10.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<PackageIcon>microsoft_visual_studio_code_alt_macos_bigsur_icon_189955.ico</PackageIcon>
+		<ApplicationIcon>Daint_Visual_Studio.ico</ApplicationIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="Daint_Visual_Studio.ico" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3848-prerelease" />
+		<PackageReference Include="NAudio" Version="2.2.1" />
+	</ItemGroup>
+
+</Project>
