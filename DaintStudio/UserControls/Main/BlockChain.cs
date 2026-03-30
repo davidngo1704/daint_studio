@@ -177,10 +177,7 @@ namespace DaintStudio.UserControls
 
             var res = await data.GetFuturesPositionsAsync();
 
-            var respon = JsonService.FromJson<BingxModel>(res);
-
-            var da = respon.UnrealizedProfit;
-
+            MessageBox.Show(res);
         }
     }
 }
