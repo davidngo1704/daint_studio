@@ -43,12 +43,15 @@
             dataGridView_spot = new DataGridView();
             button_xem_thong_tin = new Button();
             tabControl = new TabControl();
+            tabPage1 = new TabPage();
+            button1 = new Button();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)webView22).BeginInit();
             tabPage_gate_io.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView_spot).BeginInit();
             tabControl.SuspendLayout();
+            tabPage1.SuspendLayout();
             SuspendLayout();
             // 
             // tabPage3
@@ -252,12 +255,34 @@
             // 
             tabControl.Controls.Add(tabPage_gate_io);
             tabControl.Controls.Add(tabPage3);
+            tabControl.Controls.Add(tabPage1);
             tabControl.Dock = DockStyle.Fill;
             tabControl.Location = new Point(0, 0);
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
             tabControl.Size = new Size(1039, 765);
             tabControl.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(button1);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(1031, 737);
+            tabPage1.TabIndex = 4;
+            tabPage1.Text = "Bingx";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(74, 50);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // BlockChain
             // 
@@ -275,6 +300,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView_spot).EndInit();
             tabControl.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -301,5 +327,7 @@
         private DataGridView dataGridView_spot;
         private Button button_xem_thong_tin;
         private TabControl tabControl;
+        private TabPage tabPage1;
+        private Button button1;
     }
 }

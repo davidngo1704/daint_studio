@@ -2,7 +2,10 @@
 using System.Text.Json.Serialization;
 
 namespace DaintStudio.Models;
-
+public class BingxModel
+{
+    public string? UnrealizedProfit { get; set; }
+}
 public class SpotBalance
 {
     public string? currency { get; set; }

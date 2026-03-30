@@ -203,7 +203,15 @@ public static class FileHelper
 
     public static T Read<T>(string path)
     {
-        return JsonService.FromJson<T>(File.ReadAllText(path)) ?? default;
+        try
+        {
+            return JsonService.FromJson<T>(File.ReadAllText(path)) ?? default;
+
+        }
+        catch (Exception ex)
+        {
+            return default;
+        }
     }
     public static void Write<T>(string path, T obj)
     {
@@ -224,5 +232,12 @@ public static class FileHelper
 
         return File.ReadAllBytes(filePath);
     }
-
+    public static T ReadeFile<T>(string filePath)
+    {
+        if (File.Exists(filePath))
+        {
+            return JsonSerializer.Deserialize<T>(File.ReadAllText(filePath))!;
+        }
+        return default!;
+    }
 }

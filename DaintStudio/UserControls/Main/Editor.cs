@@ -398,6 +398,7 @@ namespace DaintStudio.UserControls
             }
 
         }
+
         private void get_info(object sender, EventArgs e)
         {
             try
@@ -411,6 +412,7 @@ namespace DaintStudio.UserControls
                 MessageBox.Show(ex.Message);
             }
         }
+
         private async void push_my_git(object sender, EventArgs e)
         {
             try
@@ -547,6 +549,7 @@ namespace DaintStudio.UserControls
                 MessageBox.Show(ex.Message);
             }
         }
+
         private async void pull_my_git(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
@@ -560,32 +563,36 @@ namespace DaintStudio.UserControls
                 {
                     string responseText = textInputDialog.UserInput;
 
+                    var res = ExecuteScriptWindow.RunScript(@"echo ""ok""");
 
+                    if (!string.IsNullOrEmpty(res.success))
+                    {
+                        MessageBox.Show(res.success);
+                    }
+                    else
+                    {
+                        MessageBox.Show(res.fail);
+                    }
 
                 }
-                else if (result == DialogResult.Cancel)
-                {
-                    MessageBox.Show("Người dùng nhấn Cancel");
-                }
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             Cursor = Cursors.Default;
-
-            MessageBox.Show("Thành công");
         }
+
         private void run_file(object sender, EventArgs e)
         {
 
         }
+
         private void run_file_with_param(object sender, EventArgs e)
         {
 
         }
+
         private async void buttonRun_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
@@ -644,7 +651,6 @@ namespace DaintStudio.UserControls
                     rootFolder = dialog.SelectedPath;
 
                     init_tree_file(rootFolder);
-
                 }
 
             }

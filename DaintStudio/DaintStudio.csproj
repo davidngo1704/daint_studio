@@ -16,6 +16,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3848-prerelease" />
 		<PackageReference Include="NAudio" Version="2.2.1" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.5-beta1" />
 	</ItemGroup>
 
 </Project>

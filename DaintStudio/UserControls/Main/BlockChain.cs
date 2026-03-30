@@ -4,6 +4,7 @@ using DaintStudio.Services.Blockchain;
 using DaintStudio.Services.Common;
 using System.Data;
 using System.Diagnostics;
+using System.Text.Json;
 
 namespace DaintStudio.UserControls
 {
@@ -25,9 +26,9 @@ namespace DaintStudio.UserControls
 
             comboBox_url.DataSource = urls;
 
-            textBox_key.Text = keyData.key;
+            textBox_key.Text = keyData?.key;
 
-            textBox_secret.Text = keyData.secret;
+            textBox_secret.Text = keyData?.secret;
         }
 
         async void ActiveWebView(string url)
@@ -165,6 +166,20 @@ namespace DaintStudio.UserControls
 
         private void button_chon_textbox_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            KeyModel keyObject = FileHelper.ReadeFile<KeyModel>("D:\\database\\assets\\keys\\bingx_read_key.json");
+
+            var data = new BingXClient(keyObject.key!, keyObject.secret!);
+
+            var res = await data.GetFuturesPositionsAsync();
+
+            var respon = JsonService.FromJson<BingxModel>(res);
+
+            var da = respon.UnrealizedProfit;
 
         }
     }
