@@ -114,7 +114,7 @@ namespace DaintStudio.UserControls
 
             init_tree_file(rootFolder);
         }
-        
+
         private void Dark_Mode()
         {
 
@@ -453,7 +453,7 @@ namespace DaintStudio.UserControls
                         {
                             label = responseText,
                             parentKey = "/var/lib/ApiGateway/my_git",
-                            type ="folder"
+                            type = "folder"
                         }));
 
                     }
@@ -481,9 +481,9 @@ namespace DaintStudio.UserControls
 
                 foreach (var item in repositories?.data!)
                 {
-                    if(item.parentKey == "/var/lib/ApiGateway/my_git" && item.type == "folder")
+                    if (item.parentKey == "/var/lib/ApiGateway/my_git" && item.type == "folder")
                     {
-                        if(configMyGitValue.repository_name == item.label)
+                        if (configMyGitValue.repository_name == item.label)
                         {
                             // đã có trên server
                             isExistServer = true;
@@ -492,7 +492,7 @@ namespace DaintStudio.UserControls
                     }
                 }
 
-                if(isExistServer)
+                if (isExistServer)
                 {
                     //bước 1: nén cả folder vào 1 file zip
                     string startPath = path;
@@ -663,5 +663,11 @@ namespace DaintStudio.UserControls
             MessageBox.Show("Thành công");
         }
 
+        private async void button_deploy_Click(object sender, EventArgs e)
+        {
+            HttpClientService.PostFile<object>(
+                "http://192.168.1.9:1704/file/upload?filepath=%2Fvar%2Flib%2FApiGateway%2F&filename=deploy_api_gateway.ps1",
+                "D:\\database\\window_scripts\\deploy_api_gateway.ps1");
+        }
     }
 }

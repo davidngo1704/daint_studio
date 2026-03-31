@@ -27,6 +27,7 @@ namespace DaintStudio.UserControls
             buttonSave = new System.Windows.Forms.Button();
             richTextBox = new RichTextBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
+            button_deploy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -45,6 +46,7 @@ namespace DaintStudio.UserControls
             // 
             // splitContainer1.Panel2
             // 
+            splitContainer1.Panel2.Controls.Add(button_deploy);
             splitContainer1.Panel2.Controls.Add(buttonFolder);
             splitContainer1.Panel2.Controls.Add(buttonRun);
             splitContainer1.Panel2.Controls.Add(buttonSave);
@@ -107,6 +109,16 @@ namespace DaintStudio.UserControls
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
+            // button_deploy
+            // 
+            button_deploy.Location = new Point(252, 488);
+            button_deploy.Name = "button_deploy";
+            button_deploy.Size = new Size(75, 23);
+            button_deploy.TabIndex = 4;
+            button_deploy.Text = "Deploy";
+            button_deploy.UseVisualStyleBackColor = true;
+            button_deploy.Click += button_deploy_Click;
+            // 
             // Editor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -131,6 +143,6 @@ namespace DaintStudio.UserControls
         private System.Windows.Forms.Button buttonSave;
         private ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button buttonFolder;
-
+        private System.Windows.Forms.Button button_deploy;
     }
 }
