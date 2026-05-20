@@ -166,7 +166,28 @@ namespace DaintStudio.UserControls
 
         private void button_chon_textbox_Click(object sender, EventArgs e)
         {
+            var url = textBox_url.Text?.Trim();
 
+            if (string.IsNullOrEmpty(url))
+            {
+                MessageBox.Show("Please enter a URL.");
+                return;
+            }
+
+            // If user omitted scheme, assume https
+            if (!Uri.IsWellFormedUriString(url, UriKind.Absolute))
+            {
+                url = "https://" + url;
+            }
+
+            try
+            {
+                ActiveWebView(url);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to open URL: " + ex.Message);
+            }
         }
 
         private async void button1_Click(object sender, EventArgs e)

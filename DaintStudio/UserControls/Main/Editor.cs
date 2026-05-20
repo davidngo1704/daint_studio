@@ -132,9 +132,9 @@ namespace DaintStudio.UserControls
 
             imageList.ImageSize = new Size(16, 16);
 
-            imageList.Images.Add(Image.FromFile(Path.Combine(StaticData.RootDrive, "my_git", "assets", "image_png", "folder_icon.png"))); // index 0
+            imageList.Images.Add(Image.FromFile(Path.Combine(StaticData.RootDrive, "data", "images", "thanh_dai_logo_white_bg.png"))); // index 0
 
-            imageList.Images.Add(Image.FromFile(Path.Combine(StaticData.RootDrive, "my_git", "assets", "image_png", "file_icon.png")));   // index 1
+            imageList.Images.Add(Image.FromFile(Path.Combine(StaticData.RootDrive, "data", "images", "thanh_dai_logo_ai_focus.png")));   // index 1
 
             treeView.ImageList = imageList;
 
@@ -279,6 +279,7 @@ namespace DaintStudio.UserControls
 
             foreach (TreeNode node in nodes!)
             {
+                //C:\Config.Msi'
                 if (node.ImageIndex == 0)
                 {
                     recurse(tim_full_path(node), node);
@@ -290,20 +291,29 @@ namespace DaintStudio.UserControls
 
         private void recurse(string folderPath, TreeNode parentNode)
         {
-            string[] files = Directory.GetFiles(folderPath);
-            foreach (var file in files)
+            //C:\Config.Msi'
+            if(folderPath != "C:\\Config.Msi" &&
+                folderPath != "C:\\Documents and Settings" &&
+                folderPath != "C:\\ProgramData." &&
+                folderPath != "C:\\PerfLogs"
+                )
             {
-                var fileInfo = new FileInfo(file);
-                TreeNode node = new TreeNode(fileInfo.Name, 1, 1);
-                parentNode.Nodes.Add(node);
+                string[] files = Directory.GetFiles(folderPath);
+                foreach (var file in files)
+                {
+                    var fileInfo = new FileInfo(file);
+                    TreeNode node = new TreeNode(fileInfo.Name, 1, 1);
+                    parentNode.Nodes.Add(node);
+                }
+                string[] folders = Directory.GetDirectories(folderPath);
+                foreach (var folder in folders)
+                {
+                    var folderInfo = new DirectoryInfo(folder);
+                    TreeNode node = new TreeNode(folderInfo.Name, 0, 0);
+                    parentNode.Nodes.Add(node);
+                }
             }
-            string[] folders = Directory.GetDirectories(folderPath);
-            foreach (var folder in folders)
-            {
-                var folderInfo = new DirectoryInfo(folder);
-                TreeNode node = new TreeNode(folderInfo.Name, 0, 0);
-                parentNode.Nodes.Add(node);
-            }
+
         }
 
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)

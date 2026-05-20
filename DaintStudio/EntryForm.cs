@@ -55,22 +55,6 @@ namespace DaintStudio
 
         private bool isPlaying = false;
 
-        private void nhạcTậpChungToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var path = Path.Combine(StaticData.RootDrive, "my_git", "assets", "music", "nhac_tap_trung.mp3");
-
-            if (isPlaying)
-            {
-                StopMp3();
-                isPlaying = false;
-            }
-            else
-            {
-                PlayMp3(path);
-                isPlaying = true;
-            }
-        }
-
         private void PlayMp3(string path)
         {
             outputDevice = new WaveOutEvent();
@@ -91,6 +75,36 @@ namespace DaintStudio
             audioFile?.Dispose();
         }
 
-        
+        private void nhạcTậpChungToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            var path = Path.Combine(StaticData.RootDrive, "data", "music", "nhac_tap_chung.mp3");
+
+            if (isPlaying)
+            {
+                StopMp3();
+                isPlaying = false;
+            }
+            else
+            {
+                PlayMp3(path);
+                isPlaying = true;
+            }
+        }
+
+        private void côngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var path = Path.Combine(StaticData.RootDrive, "data", "music", "cong_ty_tu_nhan.mp3");
+
+            if (isPlaying)
+            {
+                StopMp3();
+                isPlaying = false;
+            }
+            else
+            {
+                PlayMp3(path);
+                isPlaying = true;
+            }
+        }
     }
 }
