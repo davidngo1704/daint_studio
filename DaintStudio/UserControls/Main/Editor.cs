@@ -156,7 +156,11 @@ namespace DaintStudio.UserControls
             foreach (var folder in folders)
             {
 
-                if (folder == Path.Combine(StaticData.RootDrive, "$RECYCLE.BIN") || folder == Path.Combine(StaticData.RootDrive, "System Volume Information"))
+                if (
+                    folder == Path.Combine(StaticData.RootDrive, "C:\\$Recycle.Bin") || 
+                    folder == Path.Combine(StaticData.RootDrive, "$RECYCLE.BIN") || 
+                    folder == Path.Combine(StaticData.RootDrive, "C:\\Recovery") ||   
+                    folder == Path.Combine(StaticData.RootDrive, "System Volume Information"))
                 {
 
                 }

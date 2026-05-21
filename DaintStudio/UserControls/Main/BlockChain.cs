@@ -16,13 +16,13 @@ namespace DaintStudio.UserControls
             Dark_Mode();
         }
 
-        private static KeyModel keyData = FileHelper.Read<KeyModel>(@"D:\ApiGateway\data\secret_keys\gate_io\key.json");
+        private static KeyModel keyData = FileHelper.Read<KeyModel>(@"D:\data\secret_keys\gate_io\key.json");
 
         private void BlockChain_Load(object sender, EventArgs e)
         {
             var urls = new List<string>();
 
-            urls = FileHelper.Read<List<string>>(@"D:\ApiGateway\data\config\url.json");
+            urls = FileHelper.Read<List<string>>(@"D:\data\config\url.json");
 
             comboBox_url.DataSource = urls;
 
