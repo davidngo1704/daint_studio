@@ -1,5 +1,6 @@
 ﻿using DaintStudio.Services.Common;
 using DaintStudio.UserControls;
+using DaintStudio.UserControls.Main;
 using NAudio.Wave;
 
 namespace DaintStudio
@@ -17,7 +18,14 @@ namespace DaintStudio
         {
             Dark_Mode();
 
-            editorToolStripMenuItem_Click(sender, e);
+            giaoTiếpToolStripMenuItem_Click(sender, e);
+        }
+        private void giaoTiếpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var giao_tiep = new GiaoTiepUserControl();
+            giao_tiep.Dock = DockStyle.Fill;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(giao_tiep);
         }
         private void editorToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -106,5 +114,7 @@ namespace DaintStudio
                 isPlaying = true;
             }
         }
+
+        
     }
 }

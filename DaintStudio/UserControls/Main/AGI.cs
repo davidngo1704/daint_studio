@@ -20,5 +20,9 @@ namespace DaintStudio.UserControls
 
         }
 
+        private void buttonNhap_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(textBoxToken.Text + ", " + textBoxValue.Text + ", " + textBoxDimension.Text);
+        }
     }
 }

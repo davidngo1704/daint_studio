@@ -29,13 +29,14 @@
             nhạcTậpChungToolStripMenuItem = new ToolStripMenuItem();
             côngToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            giaoTiếpToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { editorToolStripMenuItem, blockChainToolStripMenuItem, aGIToolStripMenuItem, roboticsToolStripMenuItem, nhạcToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { giaoTiếpToolStripMenuItem, editorToolStripMenuItem, blockChainToolStripMenuItem, aGIToolStripMenuItem, roboticsToolStripMenuItem, nhạcToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(9, 3, 0, 3);
@@ -80,14 +81,14 @@
             // nhạcTậpChungToolStripMenuItem
             // 
             nhạcTậpChungToolStripMenuItem.Name = "nhạcTậpChungToolStripMenuItem";
-            nhạcTậpChungToolStripMenuItem.Size = new Size(270, 34);
+            nhạcTậpChungToolStripMenuItem.Size = new Size(248, 34);
             nhạcTậpChungToolStripMenuItem.Text = "Nhạc tập chung";
             nhạcTậpChungToolStripMenuItem.Click += nhạcTậpChungToolStripMenuItem_Click_1;
             // 
             // côngToolStripMenuItem
             // 
             côngToolStripMenuItem.Name = "côngToolStripMenuItem";
-            côngToolStripMenuItem.Size = new Size(270, 34);
+            côngToolStripMenuItem.Size = new Size(248, 34);
             côngToolStripMenuItem.Text = "Công  ty tư nhân";
             côngToolStripMenuItem.Click += côngToolStripMenuItem_Click;
             // 
@@ -99,6 +100,13 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1420, 1015);
             panel1.TabIndex = 1;
+            // 
+            // giaoTiếpToolStripMenuItem
+            // 
+            giaoTiếpToolStripMenuItem.Name = "giaoTiếpToolStripMenuItem";
+            giaoTiếpToolStripMenuItem.Size = new Size(102, 29);
+            giaoTiếpToolStripMenuItem.Text = "Giao Tiếp";
+            giaoTiếpToolStripMenuItem.Click += giaoTiếpToolStripMenuItem_Click;
             // 
             // EntryForm
             // 
@@ -130,5 +138,6 @@
         private ToolStripMenuItem nhạcToolStripMenuItem;
         private ToolStripMenuItem nhạcTậpChungToolStripMenuItem;
         private ToolStripMenuItem côngToolStripMenuItem;
+        private ToolStripMenuItem giaoTiếpToolStripMenuItem;
     }
 }
